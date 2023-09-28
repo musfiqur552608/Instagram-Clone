@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "642068398718",
+    "project_id": "instagram-clone-843a0",
+    "storage_bucket": "instagram-clone-843a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642068398718:android:26d2cd04c4dd58e9488e2f",
+        "android_client_info": {
+          "package_name": "org.freedu.instagramclone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnsnRnDR0kOL1sk6Yx6Jeds6vrX0ntwKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
