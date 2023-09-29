@@ -1,5 +1,6 @@
 package org.freedu.instagramclone
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -51,7 +52,8 @@ class SignUpActivity : AppCompatActivity() {
                         user.password = binding.passEtxt.editText?.text.toString()
                         Firebase.firestore.collection(USER_NODE).document(Firebase.auth.currentUser!!.uid).set(user)
                             .addOnSuccessListener {
-                                Toast.makeText(this@SignUpActivity,"User login", Toast.LENGTH_SHORT).show()
+                                startActivity(Intent(this@SignUpActivity, HomeActivity::class.java))
+                                finish()
                             }
                     }else{
                         Toast.makeText(this@SignUpActivity,result.exception?.localizedMessage, Toast.LENGTH_SHORT).show()
@@ -61,6 +63,10 @@ class SignUpActivity : AppCompatActivity() {
         }
         binding.profileImage.setOnClickListener {
             launcher.launch("image/*")
+        }
+        binding.haveAccount.setOnClickListener {
+            startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
+            finish()
         }
 
     }
