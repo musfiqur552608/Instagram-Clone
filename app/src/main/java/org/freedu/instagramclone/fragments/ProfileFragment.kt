@@ -14,10 +14,12 @@ import com.squareup.picasso.Picasso
 import org.freedu.instagramclone.Models.User
 import org.freedu.instagramclone.R
 import org.freedu.instagramclone.SignUpActivity
+import org.freedu.instagramclone.adapter.ViewPagerAdapter
 import org.freedu.instagramclone.databinding.FragmentProfileBinding
 import org.freedu.instagramclone.utils.USER_NODE
 
 class ProfileFragment : Fragment() {
+    private lateinit var viewPagerAdapter: ViewPagerAdapter
     private lateinit var binding:FragmentProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +40,11 @@ class ProfileFragment : Fragment() {
             activity?.finish()
         }
 
+        viewPagerAdapter = ViewPagerAdapter(requireActivity().supportFragmentManager)
+        viewPagerAdapter.addFragment(MyPostFragment(), "My Post")
+        viewPagerAdapter.addFragment(MyReelsFragment(), "My Reels")
+        binding.viewPager.adapter = viewPagerAdapter
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
         return binding.root
     }
 
