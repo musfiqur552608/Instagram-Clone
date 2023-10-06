@@ -40,13 +40,17 @@ class PostsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.materialToolbar.setNavigationOnClickListener {
+            startActivity(Intent(this@PostsActivity, HomeActivity::class.java))
             finish()
         }
 
         binding.selectImage.setOnClickListener {
             launcher.launch("image/*")
         }
-
+        binding.cancelBtn.setOnClickListener {
+            startActivity(Intent(this@PostsActivity, HomeActivity::class.java))
+            finish()
+        }
         binding.postBtn.setOnClickListener {
             val post: Post = Post(imageUrl!!, binding.postEtxt.editText?.text.toString())
             Firebase.firestore.collection(POST).document().set(post).addOnSuccessListener {

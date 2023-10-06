@@ -6,4 +6,116 @@
     android:layout_height="match_parent"
     tools:context=".Post.ReelsActivity">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="New Reel" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/selectReel"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="4dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/reel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
+        app:riv_border_color="#333333"
+        app:riv_border_width="2dip"
+        app:riv_corner_radius="30dip" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/reelEtxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="30dp"
+        android:hint="Write a caption"
+        app:boxStrokeErrorColor="#852496"
+        app:layout_constraintEnd_toEndOf="@+id/selectReel"
+        app:layout_constraintStart_toStartOf="@+id/selectReel"
+        app:layout_constraintTop_toBottomOf="@+id/selectReel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/reel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reelEtxt">
+
+        <ImageView
+            android:id="@+id/reelImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:src="@drawable/reel" />
+
+        <TextView
+            android:id="@+id/reelTxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="Share To Reel"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Your reel may be appear in Posts and can be seen on the posts tab under your profile"
+        app:layout_constraintEnd_toEndOf="@+id/reel"
+        app:layout_constraintStart_toStartOf="@+id/reel"
+        app:layout_constraintTop_toBottomOf="@+id/reel" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <Button
+            android:id="@+id/cancelBtn"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Cancel"
+            app:cornerRadius="10dp"
+            app:strokeColor="#852496" />
+
+        <Button
+            android:id="@+id/postBtn"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="Post"
+            app:cornerRadius="10dp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -67,7 +67,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:padding="5dp"
-            android:src="@drawable/reel" />
+            android:src="@drawable/post" />
 
         <TextView
             android:id="@+id/reelTxt"
