@@ -1,17 +1,16 @@
 package org.freedu.instagramclone.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import org.freedu.instagramclone.Models.Post
-import org.freedu.instagramclone.R
 import org.freedu.instagramclone.adapter.MyPostAdapter
 import org.freedu.instagramclone.databinding.FragmentMyPostBinding
 
